@@ -41,25 +41,6 @@ contract TestCoinFlip is BaseTest {
 
         vm.startPrank(player);
 
-        // The idea here is that
-        // 1) everything on the blockchain is public, even private variables
-        // 2) there is no "native" real radomness in the blockchain but only "pseudo randomness"
-        // Factor is private so we cannot read it directly but you could just go to etherscan, see the code and use it directly
-        // or decompile the bytecode (if the contract is not verified) and see what value is used
-        // For the pseudo-random part we just need to iterate "simulating" the result. If the result is not good to solve the coin flip
-        // we could just skip the block and wait for a block number that fit our needs
-
-        uint256 factor = 57896044618658097711785492504343953926634992332820282019728792003956564819968;
-        uint8 consecutiveWinsToReach = 10;
-
-        while (level.consecutiveWins() < consecutiveWinsToReach) {
-            uint256 blockValue = uint256(blockhash(block.number.sub(1)));
-            uint256 coinFlip = blockValue.div(factor);
-            level.flip(coinFlip == 1 ? true : false);
-
-            // simulate a transaction
-            utilities.mineBlocks(1);
-        }
         vm.stopPrank();
     }
 }

