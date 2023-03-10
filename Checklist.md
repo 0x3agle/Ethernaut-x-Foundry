@@ -1,10 +1,10 @@
 ### Checklist
 |Level|Name|Status|
 |-------|--------------|----------------|
-|01|Fallback |🟢|
-|02|Fallout |🟢|
-|03|CoinFlip |🟢|
-|04|Telephone |🟢|
+|01|[Fallback](https://github.com/0x3agle/Ethernaut-x-Foundry/blob/main/test/Fallback.t.sol#L39-L48) |🟢|
+|02|[Fallout](https://github.com/0x3agle/Ethernaut-x-Foundry/blob/main/test/Fallout.t.sol#L36-L39) |🟢|
+|03|[CoinFlip](https://github.com/0x3agle/Ethernaut-x-Foundry/blob/main/test/CoinFlip.t.sol#L42-L60) |🟢|
+|04|[Telephone](https://github.com/0x3agle/Ethernaut-x-Foundry/blob/main/test/Telephone.t.sol) |🟢|
 |05|Delegation |⚪|
 |06|Force |⚪|
 |07|Vault |⚪|
