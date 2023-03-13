@@ -38,6 +38,9 @@ contract TestDelegation is BaseTest {
 
         vm.startPrank(player, player);
 
+        (bool success, ) = address(level).call(abi.encodeWithSignature("pwn()"));
+        require(success, "CALL Failed!!!");
+
         vm.stopPrank();
     }
 }

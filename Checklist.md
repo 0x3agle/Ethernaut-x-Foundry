@@ -1,30 +1,31 @@
 ### Checklist
 |Level|Name|Status|
-|-------|--------------|----------------|
+|-------|-------|-------|
 |01|Fallback |🟢|
 |02|Fallout |🟢|
 |03|CoinFlip |🟢|
 |04|Telephone |🟢|
-|05|Delegation |⚪|
-|06|Force |⚪|
-|07|Vault |⚪|
-|08|King |⚪|
-|09|Reentrancy |⚪|
-|10|Elevator |⚪|
-|11|Privacy |⚪|
-|12|GateKeeper One |⚪|
-|13|GateKeeper Two |⚪|
-|14|Naught Coin |⚪|
-|15|Preservation |⚪|
-|16|Recovery |⚪|
-|16|Magic Number |⚪|
-|17|Alien Codex |⚪|
-|18|Denial |⚪|
-|19|Shop |⚪|
-|20|DEX |⚪|
-|21|DEX Two |⚪|
-|22|Puzzle Wallet |⚪|
-|23|Motorbike |⚪|
-|24|DoubleEntryPoint |⚪|
-|25|Good Samaritan |⚪|
-|26|Gatekeeper Three |⚪|
+|05|Token |🟢|
+|06|Delegation |🟢|
+|07|Force |🟢|
+|08|Vault |🟢|
+|09|King |🟢|
+|10|Reentrancy |🟢|
+|11|Elevator |🟢|
+|12|Privacy |🟢|
+|13|GateKeeper One |⚪|
+|14|GateKeeper Two |⚪|
+|15|Naught Coin |⚪|
+|16|Preservation |⚪|
+|17|Recovery |⚪|
+|18|Magic Number |⚪|
+|19|Alien Codex |⚪|
+|20|Denial |⚪|
+|21|Shop |⚪|
+|22|DEX |⚪|
+|23|DEX Two |⚪|
+|24|Puzzle Wallet |⚪|
+|25|Motorbike |⚪|
+|26|DoubleEntryPoint |⚪|
+|27|Good Samaritan |⚪|
+|28|Gatekeeper Three |⚪|

